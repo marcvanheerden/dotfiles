@@ -1,0 +1,152 @@
+- Practice:
+  - Typing:
+    - [ ] Rust
+    - [ ] Python
+  - Amethyst:
+    - [ ] open two programs without mouse 
+    - [ ] stack them side-by-side
+    - [ ] stack them on top of each other 
+    - [ ] fullscreen each of them 
+    - [ ] change main panel
+    - [ ] change screens 
+    - [ ] move window to other screen
+  - Firefox:
+    - [ ] new tab 
+    - [ ] change tabs 
+    - [ ] close tab
+  - Tmux:
+    - [ ] split vertical
+    - [ ] split horizontal 
+    - [ ] zoom into a pane
+    - [ ] zoom out
+    - [ ] resize 
+    - [ ] switch panes with vim navigation
+    - [ ] new window 
+    - [ ] switch windows
+    - [ ] terminate a window 
+    - [ ] scroll up and down
+    - [ ] search/copy for text in pane
+    - [ ] view session window 
+    - [ ] rename a window
+  - Fzf:
+    - [ ] move to a directory
+    - [ ] open a file 
+  - Git:
+    - [ ] reset a single file
+    - [ ] reset all files 
+  - nvim:
+    - [ ] find files 
+    - [ ] change buffer 
+    - [ ] switch back 
+    - [ ] jump to a point below 
+    - [ ] jump to a point above 
+    - [ ] comment out a block 
+    - [ ] uncomment the block 
+    - [ ] string replace a word 
+    - [ ] jump between open/close brackets 
+    - [ ] fold a block 
+    - [ ] fold all 
+    - [ ] unfold all 
+    - [ ] code actions
+    - [ ] read docs
+    - [ ] center the screen on the current line
+    - [ ] show the AST
+    - [ ] open floating window and jump in, go to def
+    - [ ] record a macro
+    - [ ] delete words within brackets/quotations
+    - [ ] delete to a specific character
+    - [ ] jump to next/last code block
+    - [ ] indent/unindent multiple lines
+    - [ ] run a command line command in nvim
+    - [ ] run a command line command on a selection of text
+    - [ ] search for the word under the cursor
+    - [ ] debug something 
+    - [ ] make a split, zoom in and out
+  - regex:
+    - [ ] Matching Any Character
+    - [ ] Matching word A or word B
+    - [ ] Matching Specific Characters
+    - [ ] Matching Characters Not in List
+    - [ ] Matching Character Ranges
+    - [ ] Matching Digits / Non-Digits
+    - [ ] Matching Whitespace / Non-Whitespace
+    - [ ] Matching Word / Non-Word Characters
+    - [ ] Matching the Beginning and End of a Line
+    - quantifiers:
+      - [ ] 0 or more
+      - [ ] 1 or more 
+      - [ ] 0 or 1 
+      - [ ] exactly n 
+      - [ ] n or more 
+      - [ ] n to m 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>    Matching Any Character: .
+>    This pattern matches any character except for newline.
+>
+>    Matching Specific Characters: [abc]
+>    This matches any one of the characters inside the square brackets. For example, [abc] matches 'a', 'b', or 'c'.
+>
+>    Matching Characters Not in List: [^abc]
+>    This matches any character not listed inside the brackets.
+>
+>    Matching Character Ranges: [a-z], [A-Z], [0-9]
+>    These match any lowercase letter, uppercase letter, and digit, respectively.
+>
+>    Matching Digits / Non-Digits: \d, \D
+>    \d matches any digit (equivalent to [0-9]), while \D matches any non-digit.
+>
+>    Matching Whitespace / Non-Whitespace: \s, \S
+>    \s matches any whitespace character (space, tab, newline, etc.), and \S matches any non-whitespace character.
+>
+>    Matching Word / Non-Word Characters: \w, \W
+>    \w matches any word character (letters, digits, or underscore), and \W matches any non-word character.
+>
+>    Matching the Beginning and End of a Line: ^, $
+>    ^ matches the start of a string, and $ matches the end of a string.
+>
+>    Matching Zero or More, One or More, Zero or One: *, +, ?
+>    * matches zero or more of the preceding element, + matches one or more, and ? matches zero or one.
+>
+>    Specifying Exact Number of Matches: {n}, {n,}, {n,m}
+>    {n} matches exactly n occurrences, {n,} matches at least n occurrences, and {n,m} matches from n to m occurrences.
+>
+>    Grouping: ()
+>    Parentheses are used to group parts of a regex together.
+>
+>    Or Operator: |
+>    This allows for the matching of either the expression before or after the '|'.
+>
+>    Escape Special Characters: \
+>    Used to escape special characters in regex.
+>
+>    Non-capturing Group: (?:...)
+>    Groups the included pattern, but does not capture it for reference.
+>
+>    Positive Lookahead: (?=...)
+>    This matches a group after the main expression without including it in the result.
+>
+>    Negative Lookahead: (?!...)
+>    This matches only if the group does not follow the main expression.
+>
+>    Positive Lookbehind: (?<=...)
+>    This matches a group before the main expression without including it in the result.
+>
+>    Negative Lookbehind: (?<!...)
+>    This matches only if the group does not precede the main expression.
+
