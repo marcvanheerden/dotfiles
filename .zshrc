@@ -1,10 +1,39 @@
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+    export ZSH="$HOME/.oh-my-zsh"
+    
+    # FZF settings
+    #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    eval "$(fzf --zsh)"
+    export FZF_DEFAULT_COMMAND='rg --files --hidden 2>/dev/null'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {} 2>/dev/null'"
+    
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/opt/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/opt/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+    
+    
+    # Created by `pipx` on 2024-05-27 18:53:09
+    export PATH="$PATH:/Users/41745/.local/bin"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux specific configuration
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-export PATH="/opt/homebrew/bin:$PATH"
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,31 +138,5 @@ alias tre="rg --files | tree --fromfile"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 bindkey -v
 
-# FZF settings
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fzf --zsh)"
-export FZF_DEFAULT_COMMAND='rg --files --hidden 2>/dev/null'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {} 2>/dev/null'"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# Created by `pipx` on 2024-05-27 18:53:09
-export PATH="$PATH:/Users/41745/.local/bin"
