@@ -40,5 +40,6 @@ require("formatter").setup({
 		json = require("formatter.filetypes.json").jq,
 		toml = require("formatter.filetypes.toml").taplo,
 		c = require("formatter.filetypes.c").clangformat,
+		cpp = require("formatter.filetypes.c").clangformat,
 	},
 })
