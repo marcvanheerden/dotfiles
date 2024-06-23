@@ -34,6 +34,7 @@
   - Git:
     - [ ] reset a single file
     - [ ] reset all files 
+    - [ ] find link to repo
   - nvim:
     - [ ] find files 
     - [ ] change buffer 
