@@ -140,3 +140,5 @@ alias tre="rg --files | tree --fromfile"
 
 bindkey -v
 
+
+. "$HOME/.cargo/env"

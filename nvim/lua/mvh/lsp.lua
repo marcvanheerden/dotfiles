@@ -12,20 +12,6 @@ vim.keymap.set("n", "gd", function()
 	vim.lsp.buf.definition()
 end, { silent = true })
 
--- LSP Diagnostics Options Setup
-local sign = function(opts)
-	vim.fn.sign_define(opts.name, {
-		texthl = opts.name,
-		text = opts.text,
-		numhl = "",
-	})
-end
-
-sign({ name = "DiagnosticSignError", text = "x" })
-sign({ name = "DiagnosticSignWarn", text = "<" })
-sign({ name = "DiagnosticSignHint", text = ">" })
-sign({ name = "DiagnosticSignInfo", text = "*" })
-
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
@@ -110,20 +96,8 @@ cmp.setup({
 	},
 })
 
--- turn on inlay hints if LSP supports it
---vim.api.nvim_create_autocmd("LspAttach", {
---	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
---	callback = function(args)
---		local client = vim.lsp.get_client_by_id(args.data.client_id)
---		if client.server_capabilities.inlayHintProvider then
---			vim.lsp.inlay_hint.enable(args.buf, true)
---		end
---	end,
---})
-
 local nvim_lsp = require("lspconfig")
 nvim_lsp.pyright.setup({})
---nvim_lsp.pylsp.setup({})
 
 nvim_lsp.clangd.setup({
 	on_attach = function(client, bufnr)

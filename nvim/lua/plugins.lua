@@ -4,7 +4,7 @@ return {
 	{
 		"mrcjkb/rustaceanvim",
 		version = "^4",
-        lazy = false,
+		lazy = false,
 	}, --Completion framework:
 	"hrsh7th/nvim-cmp", --LSP completion source:
 	"hrsh7th/cmp-nvim-lsp", --Useful completion sources:
@@ -32,5 +32,14 @@ return {
 	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 	"quarto-dev/quarto-nvim",
 	"jmbuhr/otter.nvim",
-    "mfussenegger/nvim-dap",
+	"mfussenegger/nvim-dap",
+	{
+		"otavioschwanck/arrow.nvim",
+		opts = {
+			show_icons = true,
+			leader_key = ";",
+			buffer_leader_kay = "m",
+		},
+		dependencies = "nvim-tree/nvim-web-devicons",
+	},
 }

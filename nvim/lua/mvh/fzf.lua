@@ -12,7 +12,10 @@ vim.fn.setenv("FZF_DEFAULT_COMMAND", "rg --files --hidden")
 vim.cmd([[
   command! Buffers
         \ call fzf#vim#buffers({
-        \   'options': ['--preview', 'echo fnamemodify(fzf#vim#buffer(),"^..\\zs.*")'],
+        \   'options': [
+        \     '--preview', 
+        \     'echo {} | cut -d '' '' -f 3- | xargs bat --style=numbers --color=always --line-range :500',
+        \   ],
         \   'down': '40%',
         \   'header': 'Open Buffers'
         \ })
