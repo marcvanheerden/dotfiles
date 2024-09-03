@@ -35,11 +35,6 @@ return {
 	"mfussenegger/nvim-dap",
 	{
 		"otavioschwanck/arrow.nvim",
-		opts = {
-			show_icons = true,
-			leader_key = ";",
-			buffer_leader_kay = "m",
-		},
 		dependencies = "nvim-tree/nvim-web-devicons",
 	},
 }
