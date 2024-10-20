@@ -33,7 +33,6 @@ require("mason-lspconfig").setup({
 		"pyright",
 		"pylsp",
 		"clangd",
-		"tsserver",
 		"r_language_server",
 	},
 })

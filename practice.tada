@@ -61,6 +61,7 @@
     - [ ] run a command line command in nvim
     - [ ] run a command line command on a selection of text
     - [ ] search for the word under the cursor
+    - [ ] add a mark on two buffers and jump between
     - [ ] debug something 
     - [ ] make a split, zoom in and out
   - regex:

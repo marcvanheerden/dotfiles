@@ -15,13 +15,20 @@ Run :Lazy update
 Open Mason menu with :Mason 
 Hit U to update all 
 
-Manually installed packages:
-- codelldb 
+Packages installed with Mason but not in config:
+
+- clangd
+- codelldb
 - lua-language-server > lua_ls
+- pyright
 - luaformatter 
 - python-lsp-server > pylsp 
 - stylua 
-- typescript-language-server > tsserver
+- r-languageserver > r_language_server
+- rust-analyzer
+- taplo
+- tree-sitter-cli
+- typescript-language-server > ts_ls
 
 ## Tree-sitter parsers  
 

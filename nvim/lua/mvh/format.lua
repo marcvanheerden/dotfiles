@@ -39,7 +39,33 @@ require("formatter").setup({
 		python = require("formatter.filetypes.python").ruff,
 		json = require("formatter.filetypes.json").jq,
 		toml = require("formatter.filetypes.toml").taplo,
-		c = require("formatter.filetypes.c").clangformat,
-		cpp = require("formatter.filetypes.c").clangformat,
+        c = {
+			function()
+				return {
+					exe = "clang-format",
+					args = {
+						"-style='{IndentWidth: 4}'",
+						"-assume-filename",
+						util.escape_path(util.get_current_buffer_file_name()),
+					},
+					stdin = true,
+				}
+			end
+		},
+		cpp = {
+			function()
+				return {
+					exe = "clang-format",
+					args = {
+						"-style='{IndentWidth: 4}'",
+						"-assume-filename",
+						util.escape_path(util.get_current_buffer_file_name()),
+					},
+					stdin = true,
+				}
+			end
+		},
+		--c = require("formatter.filetypes.c").clangformat,
+		--cpp = require("formatter.filetypes.c").clangformat,
 	},
 })
