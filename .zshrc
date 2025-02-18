@@ -9,22 +9,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {} 2>/dev/null'"
     
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-            . "/opt/miniconda3/etc/profile.d/conda.sh"
-        else
-            export PATH="/opt/miniconda3/bin:$PATH"
-        fi
-    fi
-    unset __conda_setup
-    # <<< conda initialize <<<
-    
-    
     # Created by `pipx` on 2024-05-27 18:53:09
     export PATH="$PATH:/Users/41745/.local/bin"
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -142,3 +126,4 @@ bindkey -v
 
 
 . "$HOME/.cargo/env"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

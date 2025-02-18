@@ -36,10 +36,22 @@ require("formatter").setup({
 		},
 		rust = require("formatter.filetypes.rust").rustfmt,
 		sql = require("formatter.filetypes.sql").pgformat,
-		python = require("formatter.filetypes.python").ruff,
+		python = {
+			function()
+				return {
+					exe = "./.venv/bin/ruff",
+					args = {
+						"format",
+						"-q",
+						"-",
+					},
+					stdin = true,
+				}
+			end,
+		},
 		json = require("formatter.filetypes.json").jq,
 		toml = require("formatter.filetypes.toml").taplo,
-        c = {
+		c = {
 			function()
 				return {
 					exe = "clang-format",
@@ -50,7 +62,7 @@ require("formatter").setup({
 					},
 					stdin = true,
 				}
-			end
+			end,
 		},
 		cpp = {
 			function()
@@ -63,7 +75,7 @@ require("formatter").setup({
 					},
 					stdin = true,
 				}
-			end
+			end,
 		},
 		--c = require("formatter.filetypes.c").clangformat,
 		--cpp = require("formatter.filetypes.c").clangformat,
