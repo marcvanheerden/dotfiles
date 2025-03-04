@@ -3,6 +3,7 @@
 ## Neovim
 
 1. Pull latest master branch 
+2. run `make distclean` to clear out old build cruft
 2. Check dependencies are installed 
 3. Build from source 
 
