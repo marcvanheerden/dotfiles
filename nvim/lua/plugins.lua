@@ -5,15 +5,7 @@ return {
 		"mrcjkb/rustaceanvim",
 		version = "^4",
 		lazy = false,
-	}, --Completion framework:
-	"hrsh7th/nvim-cmp", --LSP completion source:
-	"hrsh7th/cmp-nvim-lsp", --Useful completion sources:
-	"hrsh7th/cmp-nvim-lua",
-	"hrsh7th/cmp-nvim-lsp-signature-help",
-	"hrsh7th/cmp-vsnip",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/vim-vsnip",
+	},
 	{ "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
 	"dewyze/vim-tada",
 	"vim-airline/vim-airline",
@@ -30,11 +22,27 @@ return {
 	"neovim/nvim-lspconfig",
 	"mhartington/formatter.nvim",
 	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
-	"quarto-dev/quarto-nvim",
 	"jmbuhr/otter.nvim",
 	"mfussenegger/nvim-dap",
 	{
 		"otavioschwanck/arrow.nvim",
 		dependencies = "nvim-tree/nvim-web-devicons",
+	},
+	{
+		"saghen/blink.cmp",
+		dependencies = { "rafamadriz/friendly-snippets" },
+		version = "1.*",
+		opts = {
+			keymap = { preset = "default" },
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+			completion = { documentation = { auto_show = true } },
+			sources = {
+				default = { "lsp", "path", "snippets", "buffer" },
+			},
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+		},
+		opts_extend = { "sources.default" },
 	},
 }
