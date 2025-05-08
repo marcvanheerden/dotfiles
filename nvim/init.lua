@@ -37,6 +37,10 @@ vim.cmd([[
   highlight FloatBorder guibg=#2E3440
 ]])
 
+vim.diagnostic.config({
+    virtual_lines = true,
+})
+
 -- Silence the specific position encoding message
 local notify_original = vim.notify
 vim.notify = function(msg, ...)
