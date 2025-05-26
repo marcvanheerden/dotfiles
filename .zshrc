@@ -108,8 +108,6 @@ export MANWIDTH=999
 # fi
 export EDITOR='nvim'
 alias vi=nvim
-alias tre="rg --files | tree --fromfile"
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -127,3 +125,17 @@ bindkey -v
 
 . "$HOME/.cargo/env"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+
+# show that I have suspended jobs in terminal 
+precmd() {
+  # count only background jobs’ PIDs
+  local J=$(jobs -p | grep suspended | wc -l | tr -d ' ')
+  
+  if (( J > 0 )); then
+    # you can change the color or text here
+    RPROMPT="%F{yellow}bg jobs:${J}%f"
+  else
+    RPROMPT=""
+  fi
+}
