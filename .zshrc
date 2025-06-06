@@ -108,6 +108,10 @@ export MANWIDTH=999
 # fi
 export EDITOR='nvim'
 alias vi=nvim
+alias cdp='cd -P'
+
+
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
