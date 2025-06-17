@@ -12,6 +12,8 @@ vim.keymap.set("n", "gd", function()
 	vim.lsp.buf.definition()
 end, { silent = true })
 
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { noremap = true, silent = true })
+
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
@@ -44,7 +46,13 @@ vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option("updatetime", 300)
 
 local nvim_lsp = require("lspconfig")
-nvim_lsp.pyright.setup({})
+nvim_lsp.pyright.setup({
+	settings = {
+		python = {
+			pythonPath = "./.venv",
+		},
+	},
+})
 
 nvim_lsp.clangd.setup({
 	on_attach = function(client, bufnr)
@@ -54,4 +62,3 @@ nvim_lsp.clangd.setup({
 		debounce_text_changes = 150,
 	},
 })
-
