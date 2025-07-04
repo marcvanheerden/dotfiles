@@ -31,7 +31,6 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 		"rust_analyzer",
 		"pyright",
-		"pylsp",
 		"clangd",
 		"r_language_server",
 	},

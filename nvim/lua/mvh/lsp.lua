@@ -46,13 +46,6 @@ vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option("updatetime", 300)
 
 local nvim_lsp = require("lspconfig")
-nvim_lsp.pyright.setup({
-	settings = {
-		python = {
-			pythonPath = "./.venv",
-		},
-	},
-})
 
 nvim_lsp.clangd.setup({
 	on_attach = function(client, bufnr)

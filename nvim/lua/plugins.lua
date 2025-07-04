@@ -3,7 +3,7 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^4",
+		version = "^6",
 		lazy = false,
 	},
 	{ "nvim-treesitter/nvim-treesitter", cmd = "TSUpdate" },
