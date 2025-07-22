@@ -5,7 +5,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # FZF settings
     #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     eval "$(fzf --zsh)"
-    export FZF_DEFAULT_COMMAND='rg --files --hidden 2>/dev/null'
+    export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!**/.git/**" 2>/dev/null'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range :50 {} 2>/dev/null'"
     
