@@ -45,4 +45,5 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
+    "lewis6991/gitsigns.nvim",
 }

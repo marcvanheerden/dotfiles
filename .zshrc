@@ -109,8 +109,7 @@ export MANWIDTH=999
 export EDITOR='nvim'
 alias vi=nvim
 alias cdp='cd -P'
-
-
+alias lg=lazygit
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
