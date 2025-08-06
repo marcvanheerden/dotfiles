@@ -45,5 +45,11 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
-    "lewis6991/gitsigns.nvim",
+	"lewis6991/gitsigns.nvim",
+	{
+		"m4xshen/hardtime.nvim",
+		lazy = false,
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
+	},
 }
