@@ -111,6 +111,16 @@ alias vi=nvim
 alias cdp='cd -P'
 alias lg=lazygit
 
+devrun() {
+  if docker ps --filter "name=^devenv$" --filter "status=running" --format '{{.Names}}' | grep -q "^devenv$"; then
+    echo "Container 'devenv' is already running. Attaching..."
+    docker exec -it devenv /bin/zsh
+  else
+    echo "Starting new container 'devenv'..."
+    docker run -it --rm -v "$PWD":/workspace -w /workspace --name devenv devenv /bin/zsh
+  fi
+}
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -142,3 +152,4 @@ precmd() {
     RPROMPT=""
   fi
 }
+export PATH="/Users/41745/.pixi/bin:$PATH"
