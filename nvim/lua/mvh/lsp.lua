@@ -45,13 +45,14 @@ vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option("updatetime", 300)
 
-local nvim_lsp = require("lspconfig")
-
-nvim_lsp.clangd.setup({
+vim.lsp.config.clangd = {
+	cmd = { 'clangd' },
+	filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+	root_markers = { '.clangd', '.clang-tidy', '.clang-format', 'compile_commands.json', 'compile_flags.txt', 'configure.ac', '.git' },
 	on_attach = function(client, bufnr)
 		-- Key mappings and other configuration details go here
 	end,
 	flags = {
 		debounce_text_changes = 150,
 	},
-})
+}

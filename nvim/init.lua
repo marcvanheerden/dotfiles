@@ -1,5 +1,15 @@
 vim.g.mapleader = " "
 
+-- Configure rustaceanvim to use only Mason's rust-analyzer
+vim.g.rustaceanvim = {
+	server = {
+		cmd = function()
+			local mason_path = vim.fn.stdpath('data') .. '/mason/bin/rust-analyzer'
+			return { mason_path }
+		end,
+	},
+}
+
 -- install plugins and dependencies
 require("mvh.lazymason")
 
