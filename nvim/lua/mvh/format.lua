@@ -34,7 +34,15 @@ require("formatter").setup({
 				}
 			end,
 		},
-		rust = require("formatter.filetypes.rust").rustfmt,
+		rust = {
+			function()
+				return {
+					exe = "rustfmt",
+					args = { "--edition", "2024" },
+					stdin = true,
+				}
+			end,
+		},
 		sql = require("formatter.filetypes.sql").pgformat,
 		python = {
 			function()
