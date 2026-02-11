@@ -110,6 +110,7 @@ export EDITOR='nvim'
 alias vi=nvim
 alias cdp='cd -P'
 alias lg=lazygit
+alias uc='brew update && brew upgrade claude-code'
 
 devrun() {
   if docker ps --filter "name=^devenv$" --filter "status=running" --format '{{.Names}}' | grep -q "^devenv$"; then
@@ -159,3 +160,13 @@ if [ -f '/Users/41745/Desktop/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/4
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/41745/Desktop/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/41745/Desktop/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Use Homebrew Ruby instead of system Ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
+
+# Update tldr cache in background (at most once per day)
+if [[ ! -f /tmp/.tldr-updated-today ]] || [[ $(find /tmp/.tldr-updated-today -mtime +1 2>/dev/null) ]]; then
+  (tldr -u &>/dev/null && touch /tmp/.tldr-updated-today &)
+fi
+
